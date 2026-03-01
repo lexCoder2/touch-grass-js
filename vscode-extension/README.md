@@ -16,12 +16,12 @@
   <a href="https://github.com/lexCoder2/touch-grass-js"><img alt="GitHub" src="https://img.shields.io/badge/github-touch--grass--js-3fb950?logo=github&style=flat-square"></a>
   <a href="https://www.npmjs.com/package/go-touch-grass"><img alt="npm" src="https://img.shields.io/npm/v/go-touch-grass?color=3fb950&style=flat-square&logo=npm"></a>
   <img alt="VS Code" src="https://img.shields.io/badge/VS%20Code-%5E1.85-79c0ff?style=flat-square&logo=visualstudiocode">
-  <img alt="License" src="https://img.shields.io/badge/license-MIT-d29922?style=flat-square">
+  <img alt="License" src="https://img.shields.io/badge/license-GPL--3.0-blue?style=flat-square">
 </p>
 
 ---
 
-> A sarcastic, streak-tracking, ASCII-art-powered reminder to step away from your screen and go touch some actual grass.
+> A fun, streak-tracking, ASCII-art-powered reminder to step away from your screen and go touch some actual grass.
 > Born as a CLI — [`npx go-touch-grass`](https://www.npmjs.com/package/go-touch-grass) — now living rent-free inside VS Code and Cursor.
 
 ---
@@ -38,7 +38,7 @@ Hover for a tooltip with your full stats and quick-action links. Click to open t
 <tr>
 <td>🖼️</td>
 <td><strong>Compact side panel</strong><br>
-Opens beside your code without stealing focus. Shows a random ASCII art scene (meadow, park, or mountain), a sarcastic developer wellness message, and your streak data — all instantly, no slow reveals.</td>
+Opens beside your code without stealing focus. Shows a random ASCII art scene (meadow, park, or mountain), a fun developer wellness message, and your streak data — all instantly, no slow reveals.</td>
 </tr>
 <tr>
 <td>⏱️</td>
@@ -114,7 +114,7 @@ Duration can also be changed live from the panel — no settings file needed.
  |||||||||||||||||||||||||||||||||||||||||||||||||
 ```
 
-31 sarcastic messages. 3 scenes. Zero mercy.
+31 fun messages. 3 scenes. Zero mercy.
 
 ---
 
@@ -154,15 +154,15 @@ Supports `--streak`, `--share`, `--noTimer`, `--noShare`, and `--time <minutes>`
 
 Issues and PRs welcome at [github.com/lexCoder2/touch-grass-js](https://github.com/lexCoder2/touch-grass-js).
 
-**Got a terminal ASCII art scene or a sarcastic developer phrase?** We want it.
+**Got a terminal ASCII art scene or a fun developer phrase?** We want it.
 
 - 🎨 **New scenes** → [`src/art.js`](https://github.com/lexCoder2/touch-grass-js/blob/main/src/art.js) — plain string arrays, one per line, ~80 cols wide
-- 💬 **New messages** → [`src/messages.js`](https://github.com/lexCoder2/touch-grass-js/blob/main/src/messages.js) — keep it under ~100 chars, keep it sarcastic
+- 💬 **New messages** → [`src/messages.js`](https://github.com/lexCoder2/touch-grass-js/blob/main/src/messages.js) — keep it under ~100 chars, keep it fun
 
 Open a PR on GitHub — no setup required beyond `node >= 20`.
 
 ---
 
 <p align="center">
-  <sub>MIT License · Made with too much screen time and not enough grass</sub>
+  <sub>GPL-3.0 License · Made with too much screen time and not enough grass</sub>
 </p>

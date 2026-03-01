@@ -54,7 +54,7 @@
     "npx",
     "developers"
   ],
-  "license": "MIT",
+  "license": "GPL-3.0-only",
   "dependencies": {
     "chalk": "^5.4.1",
     "conf": "^15.1.0",

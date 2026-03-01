@@ -15,7 +15,7 @@ Track your outdoor streak, earn milestones, and share your grass-touching stats 
 [![npm version](https://img.shields.io/npm/v/go-touch-grass.svg?style=flat-square)](https://www.npmjs.com/package/go-touch-grass)
 [![npm downloads](https://img.shields.io/npm/dm/go-touch-grass.svg?style=flat-square)](https://www.npmjs.com/package/go-touch-grass)
 [![VS Code Marketplace](https://img.shields.io/visual-studio-marketplace/v/lexCoder.gotouchgrass?label=VS%20Code%20Marketplace&style=flat-square&logo=visualstudiocode&color=79c0ff)](https://marketplace.visualstudio.com/items?itemName=lexCoder.gotouchgrass)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](./LICENSE)
+[![License: GPL-3.0](https://img.shields.io/badge/License-GPL%20v3-blue.svg?style=flat-square)](./LICENSE)
 [![Node.js Version](https://img.shields.io/badge/node-%3E%3D20-brightgreen.svg?style=flat-square)](https://nodejs.org/)
 
 [**Get Started**](#-installation) · [**Features**](#-features) · [**Usage**](#-usage) · [**Commands**](#-command-reference)
@@ -26,7 +26,7 @@ Track your outdoor streak, earn milestones, and share your grass-touching stats 
 
 ## What is go-touch-grass?
 
-**go-touch-grass** is a zero-config Node.js CLI tool that nudges developers to take outdoor breaks. Run one command and you'll see colorful ASCII art, get roasted with a sarcastic message, receive a 10-minute outdoor assignment, and optionally share your streak on social media. It tracks your daily grass-touching habit locally and rewards consistency with milestone achievements.
+**go-touch-grass** is a zero-config Node.js CLI tool that nudges developers to take outdoor breaks. Run one command and you'll see colorful ASCII art, get roasted with a fun message, receive a 10-minute outdoor assignment, and optionally share your streak on social media. It tracks your daily grass-touching habit locally and rewards consistency with milestone achievements.
 
 ```bash
 npx go-touch-grass
@@ -76,7 +76,7 @@ Includes a status bar streak counter, compact side panel with timer, periodic re
 
 | Feature                        | Description                                                                                                                                                                                                            |
 | ------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **31 Sarcastic Messages**      | A different quip every time — all about your screen-addicted life choices                                                                                                                                              |
+| **31 Fun Messages**      | A different quip every time — all about your screen-addicted life choices                                                                                                                                              |
 | **3 ASCII Art Scenes**         | Meadow, park, and mountain environments rendered in your terminal                                                                                                                                                      |
 | **Persistent Streak Tracking** | Your history lives in `~/.config/go-touch-grass/` (Linux/Mac) or `%APPDATA%\\go-touch-grass\\` (Windows)                                                                                                               |
 | **Milestone Achievements**     | Unlock special messages at 1, 5, 10, 25, 50, and 100 touches                                                                                                                                                           |
@@ -99,7 +99,7 @@ npx go-touch-grass
 Runs the complete flow:
 
 1. Displays a random ASCII art outdoor scene
-2. Delivers a sarcastic message about your screen time
+2. Delivers a fun message about your screen time
 3. Shows your current streak, total touches, and longest streak
 4. Assigns a 10-minute outdoor break with optional countdown
 5. Offers to share your achievement on social media
@@ -253,7 +253,7 @@ Streak data is stored locally — no cloud, no telemetry, no accounts.
 1. Compares today's date to your last visit
 2. Increments your streak if it's a new day (idempotent on repeat runs)
 3. Renders a random ASCII art outdoor scene
-4. Picks one of 31 sarcastic messages
+4. Picks one of 31 fun messages
 5. Displays your streak, total touches, and longest streak
 6. Assigns a 10-minute outdoor break
 7. Optionally runs an animated countdown timer
@@ -288,7 +288,7 @@ Each scene is just an array of strings — one per line. Match the indentation s
 - Scenes that look recognizable at 80 columns
 - No dependencies — plain strings only
 
-### 💬 We especially want your sarcastic phrases
+### 💬 We especially want your fun phrases
 
 Do you have a cutting observation about developer screen addiction? **Add it to [`src/messages.js`](./src/messages.js).**
 
@@ -298,7 +298,7 @@ The bar is: would a sleep-deprived engineer laugh or wince at this while staring
 
 ## 📄 License
 
-[MIT](./LICENSE) © 2026 go-touch-grass contributors
+[GPL-3.0](./LICENSE) © 2026 go-touch-grass contributors
 
 ---
 
