@@ -1,0 +1,100 @@
+{
+  "name": "go-touch-grass",
+  "displayName": "Go Touch Grass",
+  "description": "Periodic reminders to take a break and touch grass. Streak tracking, ASCII art scenes, and social sharing — right inside VS Code / Cursor.",
+  "version": "1.1.13",
+  "publisher": "lexCoder2",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lexCoder2/touch-grass-js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/lexCoder2/touch-grass-js/issues"
+  },
+  "homepage": "https://github.com/lexCoder2/touch-grass-js#readme",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "icon": "touch_grass_logo.png",
+  "galleryBanner": {
+    "color": "#0d1117",
+    "theme": "dark"
+  },
+  "keywords": [
+    "break",
+    "reminder",
+    "grass",
+    "wellness",
+    "productivity",
+    "health",
+    "humor",
+    "burnout",
+    "mental-health",
+    "work-life-balance"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "touchGrass.go",
+        "title": "Touch Grass: Go Outside Now",
+        "category": "Touch Grass"
+      },
+      {
+        "command": "touchGrass.stats",
+        "title": "Touch Grass: Show Streak Stats",
+        "category": "Touch Grass"
+      },
+      {
+        "command": "touchGrass.share",
+        "title": "Touch Grass: Share Achievement",
+        "category": "Touch Grass"
+      },
+      {
+        "command": "touchGrass.reset",
+        "title": "Touch Grass: Reset Streak",
+        "category": "Touch Grass"
+      }
+    ],
+    "configuration": {
+      "title": "Go Touch Grass",
+      "properties": {
+        "touchGrass.enableReminders": {
+          "type": "boolean",
+          "default": true,
+          "description": "Automatically show reminders to go touch grass while you code."
+        },
+        "touchGrass.reminderIntervalMinutes": {
+          "type": "number",
+          "default": 60,
+          "minimum": 5,
+          "description": "How often (in minutes) to show a touch-grass reminder. Minimum 5 minutes."
+        },
+        "touchGrass.outdoorMinutes": {
+          "type": "number",
+          "default": 10,
+          "minimum": 1,
+          "maximum": 120,
+          "description": "How many minutes the outdoor timer counts down for."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "package": "npx @vscode/vsce package"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.85.0",
+    "@types/node": "^20.0.0",
+    "typescript": "^5.3.0"
+  }
+}

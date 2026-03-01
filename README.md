@@ -8,7 +8,7 @@
 
 # go-touch-grass
 
-### A sarcastic CLI that reminds developers to go outside, touch grass, and stop staring at screens
+### A Fun CLI that reminds developers to go outside, touch grass, and stop staring at screens
 
 Track your outdoor streak, earn milestones, and share your grass-touching stats on Twitter/X, LinkedIn, and Instagram — all from your terminal.
 
@@ -57,6 +57,19 @@ npm install go-touch-grass
 npx go-touch-grass
 ```
 
+### VS Code / Cursor Extension
+
+Install the extension directly from the `vscode-extension/` folder:
+
+```bash
+cd vscode-extension
+npm install
+npm run package          # produces go-touch-grass-1.0.0.vsix
+code --install-extension go-touch-grass-1.0.0.vsix
+```
+
+Or press **F5** inside `vscode-extension/` to launch the Extension Development Host.
+
 ---
 
 ## 🎯 Features
@@ -71,6 +84,7 @@ npx go-touch-grass
 | **Social Media Sharing**       | Post your streak to **Twitter/X**, **LinkedIn**, or **Instagram**                                        |
 | **8.5 kB Package Size**        | Tiny footprint — optimized for `npx` cold starts                                                         |
 | **ESM-Native**                 | Pure ES modules, no CommonJS                                                                             |
+| **VS Code / Cursor Extension** | Status bar streak counter, in-editor panel with timer, periodic reminders, and social sharing            |
 
 ---
 

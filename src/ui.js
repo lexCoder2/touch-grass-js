@@ -13,33 +13,73 @@ const colors = {
   warning: chalk.yellow,
 };
 
-export function printHeader(art) {
-  let colored = art.scene;
-  // Color grass tildes green
-  colored = colored.replace(/~/g, colors.grass('~'));
-  // Color asterisks gold
-  colored = colored.replace(/\*/g, colors.sun('*'));
-  // Color caret (tree) green
-  colored = colored.replace(/\^/g, colors.grass('^'));
-
-  console.log('\n' + colored + '\n');
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-export function printMessage(message) {
+function colorLine(line) {
+  return line
+    .replace(/~/g, colors.grass('~'))
+    .replace(/\*/g, colors.sun('*'))
+    .replace(/\^/g, colors.grass('^'))
+    .replace(/,/g, colors.grass(','))
+    .replace(/v/g, colors.grass('v'))
+    .replace(/[|]/g, colors.grass('|'));
+}
+
+export async function printHeader(art) {
+  const lines = art.scene.split('\n');
+  console.log();
+  for (const line of lines) {
+    console.log(colorLine(line));
+    // Longer pause on blank lines and ground/grass rows — gives each visual
+    // layer a moment to register before the next one appears.
+    if (line.trim() === '') {
+      await sleep(350);
+    } else if (/^[~\/\\|, ]+$/.test(line.trim()) && line.trim().length > 4) {
+      await sleep(200);
+    } else {
+      await sleep(55);
+    }
+  }
+  console.log();
+  await sleep(300);
+}
+
+export async function printMessage(message) {
+  await sleep(120);
   const prefix = colors.warning('>>>');
-  console.log(`${prefix} ${colors.accent(message)}\n`);
+  process.stdout.write(`${prefix} `);
+
+  // Typewriter: write each character individually with a small delay.
+  // Punctuation gets a slightly longer beat so it feels like natural pacing.
+  for (const char of message) {
+    process.stdout.write(colors.accent(char));
+    if ('.!?,;:'.includes(char)) {
+      await sleep(120);
+    } else {
+      await sleep(22);
+    }
+  }
+
+  process.stdout.write('\n');
+  await sleep(1000); // pause so the full message lands before moving on
+  process.stdout.write('\n');
 }
 
-export function printStreakBadge(data, milestone) {
+export async function printStreakBadge(data, milestone) {
+  await sleep(120);
   const streakLine = `  ${colors.streak(`streak: ${data.currentStreak} days`)} | ${colors.streak(`total: ${data.count} touches`)} | ${colors.streak(`longest: ${data.longestStreak} days`)}`;
   console.log(streakLine);
 
   if (milestone) {
+    await sleep(200);
     console.log(`\n  ${colors.warning('✨')} ${colors.accent(milestone)}\n`);
   }
 }
 
-export function printSeparator() {
+export async function printSeparator() {
+  await sleep(80);
   console.log(colors.dim('─'.repeat(60)));
 }
 

@@ -24,6 +24,7 @@ Usage
 Options
   --streak, -s     Show your grass-touching streak stats
   --share, -S      Share your achievement to social media
+  --time, -t       Outdoor timer duration in minutes (default: 10)
   --noTimer        Skip the countdown timer
   --noShare        Skip the social media share prompt
   --help           Show this help
@@ -33,6 +34,7 @@ Examples
   $ npx go-touch-grass
   $ npx go-touch-grass --streak
   $ npx go-touch-grass --share
+  $ npx go-touch-grass --time 5
   $ npx go-touch-grass --noShare
 `,
   {
@@ -55,6 +57,11 @@ Examples
       noShare: {
         type: 'boolean',
         default: false,
+      },
+      time: {
+        type: 'number',
+        shortFlag: 't',
+        default: 10,
       },
     },
   }
@@ -94,27 +101,27 @@ async function main() {
 
   // Main experience flow
   const art = getArt();
-  printHeader(art);
-  printSeparator();
+  await printHeader(art);
+  await printSeparator();
 
   const message = getRandomMessage();
-  printMessage(message);
+  await printMessage(message);
 
-  printSeparator();
+  await printSeparator();
 
   const streakResult = incrementStreak();
-  printStreakBadge(streakResult, streakResult.milestone);
+  await printStreakBadge(streakResult, streakResult.milestone);
 
-  printSeparator();
+  await printSeparator();
 
   // Show timer experience
-  showReturnTime();
+  showReturnTime(cli.flags.time);
 
   // Offer countdown if TTY
   if (!cli.flags.noTimer) {
-    const wantCountdown = await showTimerPrompt();
+    const wantCountdown = await showTimerPrompt(cli.flags.time);
     if (wantCountdown) {
-      await runCountdown(10);
+      await runCountdown(cli.flags.time);
       console.log(chalk.bold.green('\n✓ Welcome back! Now go work on something.\n'));
     }
   }

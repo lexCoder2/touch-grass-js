@@ -1,29 +1,32 @@
-import chalk from 'chalk';
-import boxen from 'boxen';
-import logUpdate from 'log-update';
-import { confirm } from '@inquirer/prompts';
+import chalk from "chalk";
+import boxen from "boxen";
+import logUpdate from "log-update";
+import { confirm } from "@inquirer/prompts";
 
-export function showReturnTime() {
-  const returnTime = new Date(Date.now() + 10 * 60 * 1000);
-  const timeStr = returnTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+export function showReturnTime(minutes = 10) {
+  const returnTime = new Date(Date.now() + minutes * 60 * 1000);
+  const timeStr = returnTime.toLocaleTimeString([], {
+    hour: "2-digit",
+    minute: "2-digit",
+  });
 
   const timerBox = boxen(
-    `⏱ YOUR OUTDOOR ASSIGNMENT\n\nDuration: ${chalk.yellow('10 minutes')}\nReturn by: ${chalk.cyan(timeStr)}\n\n${chalk.dim('Do NOT touch your keyboard.')}\n${chalk.dim('Do NOT check Slack.')}\n${chalk.dim('Touch grass. Breathe air.')}`,
+    `⏱ YOUR OUTDOOR ASSIGNMENT \n\nDuration: ${chalk.yellow(`${minutes} minute${minutes !== 1 ? 's' : ''}`)}\nReturn by: ${chalk.cyan(timeStr)}\n\n${chalk.dim("Do NOT touch your keyboard.")}\n${chalk.dim("Do NOT check Slack.")}\n${chalk.dim("Touch grass. Breathe air.")}`,
     {
       padding: 1,
-      margin: 1,
-      borderStyle: 'round',
-      borderColor: 'yellow',
-    }
+      margin: 0,
+      borderStyle: "round",
+      borderColor: "yellow",
+    },
   );
 
-  console.log('\n' + timerBox + '\n');
+  console.log("\n" + timerBox + "\n");
 }
 
 function buildProgressBar(done, total, width = 30) {
   const filledWidth = Math.floor((done / total) * width);
   const emptyWidth = width - filledWidth;
-  return '█'.repeat(filledWidth) + '░'.repeat(emptyWidth);
+  return "█".repeat(filledWidth) + "░".repeat(emptyWidth);
 }
 
 export async function runCountdown(minutes = 10) {
@@ -32,15 +35,17 @@ export async function runCountdown(minutes = 10) {
     let remaining = totalSeconds;
 
     const interval = setInterval(() => {
-      const mins = Math.floor(remaining / 60).toString().padStart(2, '0');
-      const secs = (remaining % 60).toString().padStart(2, '0');
+      const mins = Math.floor(remaining / 60)
+        .toString()
+        .padStart(2, "0");
+      const secs = (remaining % 60).toString().padStart(2, "0");
       const bar = buildProgressBar(totalSeconds - remaining, totalSeconds);
 
       logUpdate(
         chalk.green(`\n  ⏱ GO OUTSIDE TIMER\n\n`) +
-        chalk.yellow(`  ${mins}:${secs} remaining\n\n`) +
-        chalk.gray(`  ${bar}\n\n`) +
-        chalk.dim(`  Press Ctrl+C to admit defeat\n`)
+          chalk.yellow(`  ${mins}:${secs} remaining\n\n`) +
+          chalk.gray(`  ${bar}\n\n`) +
+          chalk.dim(`  Press Ctrl+C to admit defeat\n`),
       );
 
       remaining--;
@@ -53,7 +58,7 @@ export async function runCountdown(minutes = 10) {
   });
 }
 
-export async function showTimerPrompt() {
+export async function showTimerPrompt(minutes = 10) {
   // Skip in non-TTY environments
   if (!process.stdout.isTTY) {
     return false;
@@ -61,7 +66,7 @@ export async function showTimerPrompt() {
 
   try {
     const wantCountdown = await confirm({
-      message: 'Count down 10 minutes for you?',
+      message: `Count down ${minutes} minute${minutes !== 1 ? 's' : ''} for you?`,
       default: false,
     });
     return wantCountdown;
