@@ -1,20 +1,20 @@
 import open from 'open';
 
 const SOCIAL_TEMPLATES = [
-  '🌿 just touched grass ✅ you should too! try: npx touch-grass',
-  '🌱 i went outside. actually outside. grass was real. npx touch-grass if you dare',
-  '🔥 day {streak} of touching grass as a developer. it gets easier. npx touch-grass',
-  '⚡ my outdoor streak is {streak} days and i feel things. horrifying. npx touch-grass',
-  '☀️ went outside today. no screens. no PRs. grass. 10/10 recommend. npx touch-grass',
-  '🏕️ {streak} consecutive days of touching grass. my therapist is proud. npx touch-grass',
-  '🌍 breaking: developer discovers photosynthesis exists. it\'s called touching grass. npx touch-grass',
-  '💪 {streak} day grass-touching streak 🌿 my productivity is actually up??? npx touch-grass',
-  '🎉 hit {streak} touches! my vitamin D levels have entered the chat. npx touch-grass',
-  '🚀 just proved i can escape my desk for 10 minutes. npx touch-grass',
-  '😎 {streak} touches deep into my grass-touching era. you could join. npx touch-grass',
-  '🌟 pro tip: touching grass is the best debugging strategy. npx touch-grass',
-  '🧠 went outside. the solution was there the whole time. literally in the air. npx touch-grass',
-  '✨ {streak} days of touching grass and my posture is actually improving??? npx touch-grass',
+  '🌿 just touched grass ✅ you should too! try: npx go-touch-grass',
+  '🌱 i went outside. actually outside. grass was real. npx go-touch-grass if you dare',
+  '🔥 day {streak} of touching grass as a developer. it gets easier. npx go-touch-grass',
+  '⚡ my outdoor streak is {streak} days and i feel things. horrifying. npx go-touch-grass',
+  '☀️ went outside today. no screens. no PRs. grass. 10/10 recommend. npx go-touch-grass',
+  '🏕️ {streak} consecutive days of touching grass. my therapist is proud. npx go-touch-grass',
+  '🌍 breaking: developer discovers photosynthesis exists. it\'s called touching grass. npx go-touch-grass',
+  '💪 {streak} day grass-touching streak 🌿 my productivity is actually up??? npx go-touch-grass',
+  '🎉 hit {streak} touches! my vitamin D levels have entered the chat. npx go-touch-grass',
+  '🚀 just proved i can escape my desk for 10 minutes. npx go-touch-grass',
+  '😎 {streak} touches deep into my grass-touching era. you could join. npx go-touch-grass',
+  '🌟 pro tip: touching grass is the best debugging strategy. npx go-touch-grass',
+  '🧠 went outside. the solution was there the whole time. literally in the air. npx go-touch-grass',
+  '✨ {streak} days of touching grass and my posture is actually improving??? npx go-touch-grass',
 ];
 
 export function buildShareText(streakData) {
@@ -31,7 +31,7 @@ export function buildTwitterUrl(text) {
 
 export function buildLinkedInUrl(text) {
   const encoded = encodeURIComponent(text);
-  return `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent('https://github.com/anthropics/touch-grass')}&summary=${encoded}`;
+  return `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent('https://github.com/lexCoder2/touch-grass-js')}&summary=${encoded}`;
 }
 
 export function buildInstagramShareText(text) {

@@ -2,7 +2,7 @@ import Conf from 'conf';
 import boxen from 'boxen';
 
 const config = new Conf({
-  projectName: 'touch-grass',
+  projectName: 'go-touch-grass',
   schema: {
     count: {
       type: 'number',

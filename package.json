@@ -13,7 +13,7 @@
   "author": "Alex Rodriguez <hi@iarodriguez.com>",
   "type": "module",
   "bin": {
-    "touch-grass": "./bin/touch-grass.js"
+    "go-touch-grass": "./bin/touch-grass.js"
   },
   "files": [
     "bin/",

@@ -19,7 +19,7 @@ import { confirm, select } from '@inquirer/prompts';
 const cli = meow(
   `
 Usage
-  $ npx touch-grass [options]
+  $ npx go-touch-grass [options]
 
 Options
   --streak, -s     Show your grass-touching streak stats
@@ -30,10 +30,10 @@ Options
   --version        Show version
 
 Examples
-  $ npx touch-grass
-  $ npx touch-grass --streak
-  $ npx touch-grass --share
-  $ npx touch-grass --noShare
+  $ npx go-touch-grass
+  $ npx go-touch-grass --streak
+  $ npx go-touch-grass --share
+  $ npx go-touch-grass --noShare
 `,
   {
     importMeta: import.meta,

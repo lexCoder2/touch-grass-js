@@ -1,19 +1,19 @@
 <div align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./touch_grass_logo.png" />
+  <source media="(prefers-color-scheme: dark)" srcset="./touch_grass_logo_dark.png" />
   <source media="(prefers-color-scheme: light)" srcset="./toucn_grass_logo.png" />
-  <img src="./touch_grass_logo.png" alt="touch-grass.js CLI logo — a mouse cursor touching grass blades, representing developer break reminders" width="280" />
+  <img src="./touch_grass_logo.png" alt="go-touch-grass CLI logo — a mouse cursor touching grass blades, representing developer break reminders" width="280" />
 </picture>
 
-# touch-grass.js
+# go-touch-grass
 
 ### A sarcastic CLI that reminds developers to go outside, touch grass, and stop staring at screens
 
 Track your outdoor streak, earn milestones, and share your grass-touching stats on Twitter/X, LinkedIn, and Instagram — all from your terminal.
 
-[![npm version](https://img.shields.io/npm/v/touch-grass.svg?style=flat-square)](https://www.npmjs.com/package/touch-grass)
-[![npm downloads](https://img.shields.io/npm/dm/touch-grass.svg?style=flat-square)](https://www.npmjs.com/package/touch-grass)
+[![npm version](https://img.shields.io/npm/v/go-touch-grass.svg?style=flat-square)](https://www.npmjs.com/package/go-touch-grass)
+[![npm downloads](https://img.shields.io/npm/dm/go-touch-grass.svg?style=flat-square)](https://www.npmjs.com/package/go-touch-grass)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](./LICENSE)
 [![Node.js Version](https://img.shields.io/badge/node-%3E%3D20-brightgreen.svg?style=flat-square)](https://nodejs.org/)
 
@@ -23,12 +23,12 @@ Track your outdoor streak, earn milestones, and share your grass-touching stats 
 
 ---
 
-## What is touch-grass.js?
+## What is go-touch-grass?
 
-**touch-grass** is a zero-config Node.js CLI tool that nudges developers to take outdoor breaks. Run one command and you'll see colorful ASCII art, get roasted with a sarcastic message, receive a 10-minute outdoor assignment, and optionally share your streak on social media. It tracks your daily grass-touching habit locally and rewards consistency with milestone achievements.
+**go-touch-grass** is a zero-config Node.js CLI tool that nudges developers to take outdoor breaks. Run one command and you'll see colorful ASCII art, get roasted with a sarcastic message, receive a 10-minute outdoor assignment, and optionally share your streak on social media. It tracks your daily grass-touching habit locally and rewards consistency with milestone achievements.
 
 ```bash
-npx touch-grass
+npx go-touch-grass
 ```
 
 > **One command. One break. Every day.**
@@ -40,37 +40,37 @@ npx touch-grass
 ### Global install (recommended for daily use)
 
 ```bash
-npm install -g touch-grass
-touch-grass
+npm install -g go-touch-grass
+go-touch-grass
 ```
 
 ### One-time execution (zero install)
 
 ```bash
-npx touch-grass
+npx go-touch-grass
 ```
 
 ### Local project dependency
 
 ```bash
-npm install touch-grass
-npx touch-grass
+npm install go-touch-grass
+npx go-touch-grass
 ```
 
 ---
 
 ## 🎯 Features
 
-| Feature                        | Description                                                                                        |
-| ------------------------------ | -------------------------------------------------------------------------------------------------- |
-| **31 Sarcastic Messages**      | A different quip every time — all about your screen-addicted life choices                          |
-| **3 ASCII Art Scenes**         | Meadow, park, and mountain environments rendered in your terminal                                  |
-| **Persistent Streak Tracking** | Your history lives in `~/.config/touch-grass/` (Linux/Mac) or `%APPDATA%\\touch-grass\\` (Windows) |
-| **Milestone Achievements**     | Unlock special messages at 1, 5, 10, 25, 50, and 100 touches                                       |
-| **10-Minute Countdown Timer**  | Optional animated progress bar for your outdoor assignment                                         |
-| **Social Media Sharing**       | Post your streak to **Twitter/X**, **LinkedIn**, or **Instagram**                                  |
-| **8.5 kB Package Size**        | Tiny footprint — optimized for `npx` cold starts                                                   |
-| **ESM-Native**                 | Pure ES modules, no CommonJS                                                                       |
+| Feature                        | Description                                                                                              |
+| ------------------------------ | -------------------------------------------------------------------------------------------------------- |
+| **31 Sarcastic Messages**      | A different quip every time — all about your screen-addicted life choices                                |
+| **3 ASCII Art Scenes**         | Meadow, park, and mountain environments rendered in your terminal                                        |
+| **Persistent Streak Tracking** | Your history lives in `~/.config/go-touch-grass/` (Linux/Mac) or `%APPDATA%\\go-touch-grass\\` (Windows) |
+| **Milestone Achievements**     | Unlock special messages at 1, 5, 10, 25, 50, and 100 touches                                             |
+| **10-Minute Countdown Timer**  | Optional animated progress bar for your outdoor assignment                                               |
+| **Social Media Sharing**       | Post your streak to **Twitter/X**, **LinkedIn**, or **Instagram**                                        |
+| **8.5 kB Package Size**        | Tiny footprint — optimized for `npx` cold starts                                                         |
+| **ESM-Native**                 | Pure ES modules, no CommonJS                                                                             |
 
 ---
 
@@ -79,7 +79,7 @@ npx touch-grass
 ### Full experience
 
 ```bash
-npx touch-grass
+npx go-touch-grass
 ```
 
 Runs the complete flow:
@@ -93,17 +93,17 @@ Runs the complete flow:
 ### Check your streak stats
 
 ```bash
-npx touch-grass --streak
+npx go-touch-grass --streak
 # or
-npx touch-grass -s
+npx go-touch-grass -s
 ```
 
 ### Share to social media
 
 ```bash
-npx touch-grass --share
+npx go-touch-grass --share
 # or
-npx touch-grass -S
+npx go-touch-grass -S
 ```
 
 Choose your platform interactively:
@@ -116,15 +116,15 @@ Choose your platform interactively:
 ### Skip optional features
 
 ```bash
-npx touch-grass --noTimer          # Skip the countdown timer
-npx touch-grass --noShare          # Skip the social media prompt
-npx touch-grass --noTimer --noShare  # Minimalist mode
+npx go-touch-grass --noTimer          # Skip the countdown timer
+npx go-touch-grass --noShare          # Skip the social media prompt
+npx go-touch-grass --noTimer --noShare  # Minimalist mode
 ```
 
 ### Show help
 
 ```bash
-npx touch-grass --help
+npx go-touch-grass --help
 ```
 
 ---
@@ -172,15 +172,15 @@ npx touch-grass --help
 Each share message is randomized. Here are some examples:
 
 ```
-🌿 just touched grass ✅ you should too! try: npx touch-grass
+🌿 just touched grass ✅ you should too! try: npx go-touch-grass
 
-🔥 day 7 of touching grass as a developer. it gets easier. npx touch-grass
+🔥 day 7 of touching grass as a developer. it gets easier. npx go-touch-grass
 
-💪 7 day grass-touching streak 🌿 my productivity is actually up??? npx touch-grass
+💪 7 day grass-touching streak 🌿 my productivity is actually up??? npx go-touch-grass
 
-🧠 went outside. the solution was there the whole time. literally in the air. npx touch-grass
+🧠 went outside. the solution was there the whole time. literally in the air. npx go-touch-grass
 
-☀️ 30 consecutive days of touching grass. my therapist is proud. npx touch-grass
+☀️ 30 consecutive days of touching grass. my therapist is proud. npx go-touch-grass
 ```
 
 ---
@@ -189,10 +189,10 @@ Each share message is randomized. Here are some examples:
 
 Streak data is stored locally — no cloud, no telemetry, no accounts.
 
-| Platform          | Config path                           |
-| ----------------- | ------------------------------------- |
-| **Linux / macOS** | `~/.config/touch-grass/config.json`   |
-| **Windows**       | `%APPDATA%\\touch-grass\\config.json` |
+| Platform          | Config path                              |
+| ----------------- | ---------------------------------------- |
+| **Linux / macOS** | `~/.config/go-touch-grass/config.json`   |
+| **Windows**       | `%APPDATA%\\go-touch-grass\\config.json` |
 
 <details>
 <summary>Example config file</summary>
@@ -212,15 +212,15 @@ Streak data is stored locally — no cloud, no telemetry, no accounts.
 
 ## 🎯 Command Reference
 
-| Command                     | Alias | Description              |
-| --------------------------- | ----- | ------------------------ |
-| `npx touch-grass`           | —     | Run the full experience  |
-| `npx touch-grass --streak`  | `-s`  | Show streak stats        |
-| `npx touch-grass --share`   | `-S`  | Open social sharing menu |
-| `npx touch-grass --noTimer` | —     | Skip the countdown timer |
-| `npx touch-grass --noShare` | —     | Skip social media prompt |
-| `npx touch-grass --help`    | —     | Print help text          |
-| `npx touch-grass --version` | —     | Print version number     |
+| Command                        | Alias | Description              |
+| ------------------------------ | ----- | ------------------------ |
+| `npx go-touch-grass`           | —     | Run the full experience  |
+| `npx go-touch-grass --streak`  | `-s`  | Show streak stats        |
+| `npx go-touch-grass --share`   | `-S`  | Open social sharing menu |
+| `npx go-touch-grass --noTimer` | —     | Skip the countdown timer |
+| `npx go-touch-grass --noShare` | —     | Skip social media prompt |
+| `npx go-touch-grass --help`    | —     | Print help text          |
+| `npx go-touch-grass --version` | —     | Print version number     |
 
 ---
 
@@ -230,7 +230,7 @@ Streak data is stored locally — no cloud, no telemetry, no accounts.
 - **Streaks reset after one missed day.** Consistency is the point.
 - **Vary your sharing platform.** LinkedIn for professional audiences, Twitter for unhinged honesty.
 - **Use `--noTimer` when you're short on time.** The outdoor assignment is optional.
-- **Pipe-friendly.** `touch-grass | tee grass.log` works for logging your sessions.
+- **Pipe-friendly.** `go-go-go-touch-grass | tee grass.log` works for logging your sessions.
 
 ---
 
@@ -260,15 +260,15 @@ Streak data is stored locally — no cloud, no telemetry, no accounts.
 
 Contributions are welcome from developers who go outside sometimes.
 
-- **Bug reports:** [Open an issue](https://github.com/your-username/touch-grass/issues)
-- **Feature requests:** [Start a discussion](https://github.com/your-username/touch-grass/discussions)
+- **Bug reports:** [Open an issue](https://github.com/lexCoder2/touch-grass-js/issues)
+- **Feature requests:** [Start a discussion](https://github.com/lexCoder2/touch-grass-js/discussions)
 - **Pull requests:** Reviewed between outdoor breaks
 
 ---
 
 ## 📄 License
 
-[MIT](./LICENSE) © 2026 touch-grass contributors
+[MIT](./LICENSE) © 2026 go-touch-grass contributors
 
 ---
 
@@ -278,6 +278,6 @@ Contributions are welcome from developers who go outside sometimes.
 
 Your code will still be there in 10 minutes. Your mental health might not be.
 
-[**⬆ Back to top**](#touch-grassjs)
+[**⬆ Back to top**](#go-touch-grass)
 
 </div>

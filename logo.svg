@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 600" width="520" height="600" role="img" aria-label="touch-grass.js logo: a mouse cursor clicking on grass blades inside a circle">
-  <title>touch-grass.js — CLI reminder for developers to go outside</title>
-  <desc>Logo for touch-grass.js: a mouse cursor pointer touching green grass blades inside a white circle. A sarcastic Node.js CLI tool that reminds developers to take outdoor breaks.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 600" width="520" height="600" role="img" aria-label="go-touch-grass logo: a mouse cursor clicking on grass blades inside a circle">
+  <title>go-touch-grass — CLI reminder for developers to go outside</title>
+  <desc>Logo for go-touch-grass: a mouse cursor pointer touching green grass blades inside a white circle. A sarcastic Node.js CLI tool that reminds developers to take outdoor breaks.</desc>
   <defs>
     <!-- Grass gradients -->
     <linearGradient id="grass-bright" x1="0" y1="0" x2="0" y2="1">
@@ -89,5 +89,5 @@
   <!-- === TEXT: touch-grass.js === -->
   <text x="260" y="530" font-family="'Segoe UI', 'Helvetica Neue', 'Arial', sans-serif"
         font-size="56" font-weight="800" fill="#4CAF50" text-anchor="middle"
-        letter-spacing="-0.5">touch-grass<tspan fill="#2E7D32" font-weight="700">.js</tspan></text>
+        letter-spacing="-0.5">go-touch-grass</text>
 </svg>
