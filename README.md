@@ -25,6 +25,16 @@ npx go-touch-grass
 
 That's it. Run it. Get roasted. Go outside.
 
+<div align="center">
+
+**Never leave VS Code?**
+
+[![Install on VS Code](https://img.shields.io/badge/Install%20on-VS%20Code%20%2F%20Cursor-79c0ff?style=for-the-badge&logo=visualstudiocode)](https://marketplace.visualstudio.com/items?itemName=lexCoder.gotouchgrass)
+
+Streak tracking, periodic reminders, and a countdown timer — right in your status bar.
+
+</div>
+
 ---
 
 ## Why this exists
@@ -35,7 +45,7 @@ Somewhere between your 47th open tab and your third energy drink, you forgot tha
 
 **go-touch-grass** is an intervention disguised as a CLI tool:
 
-- **Roasts you** with one of 67+ (yes, I did it) messages about your screen-addicted life choices
+- **Roasts you** with one of 71+ messages about your screen-addicted life choices
 - **Shows you what outside looks like** via ASCII art (because you've forgotten)
 - **Tracks your outdoor streak** — same dopamine as a GitHub graph, but good for you
 - **Assigns a 10-minute break** with a countdown timer, because apparently adults need to be told when to go outside
@@ -51,8 +61,6 @@ We built this because we _are_ the target audience. We are the 2am debug session
 npx go-touch-grass           # zero install, just run it
 npm install -g go-touch-grass # or install globally if you're committed (to self-care)
 ```
-
-Also available as a [VS Code / Cursor extension](https://marketplace.visualstudio.com/items?itemName=lexCoder.gotouchgrass) — streak counter in your status bar, reminders, the whole thing.
 
 ---
 
