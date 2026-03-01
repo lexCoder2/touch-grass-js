@@ -1,9 +1,9 @@
 {
-  "name": "go-touch-grass",
+  "name": "gotouchgrass",
   "displayName": "Go Touch Grass",
   "description": "Periodic reminders to take a break and touch grass. Streak tracking, ASCII art scenes, and social sharing — right inside VS Code / Cursor.",
-  "version": "1.1.13",
-  "publisher": "lexCoder2",
+  "version": "1.2.14",
+  "publisher": "lexCoder",
   "repository": {
     "type": "git",
     "url": "https://github.com/lexCoder2/touch-grass-js.git"

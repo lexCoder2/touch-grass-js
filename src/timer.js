@@ -11,7 +11,7 @@ export function showReturnTime(minutes = 10) {
   });
 
   const timerBox = boxen(
-    `⏱ YOUR OUTDOOR ASSIGNMENT \n\nDuration: ${chalk.yellow(`${minutes} minute${minutes !== 1 ? 's' : ''}`)}\nReturn by: ${chalk.cyan(timeStr)}\n\n${chalk.dim("Do NOT touch your keyboard.")}\n${chalk.dim("Do NOT check Slack.")}\n${chalk.dim("Touch grass. Breathe air.")}`,
+    `⏱ YOUR OUTDOOR ASSIGNMENT \n\nDuration: ${chalk.yellow(`${minutes} minute${minutes !== 1 ? "s" : ""}`)}\nReturn by: ${chalk.cyan(timeStr)}\n\n${chalk.dim("Do NOT touch your keyboard.")}\n${chalk.dim("Do NOT check Slack.")}\n${chalk.dim("Touch grass. Breathe air.")}`,
     {
       padding: 1,
       margin: 0,
@@ -66,7 +66,7 @@ export async function showTimerPrompt(minutes = 10) {
 
   try {
     const wantCountdown = await confirm({
-      message: `Count down ${minutes} minute${minutes !== 1 ? 's' : ''} for you?`,
+      message: `Count down ${minutes} minute${minutes !== 1 ? "s" : ""} for you?`,
       default: false,
     });
     return wantCountdown;

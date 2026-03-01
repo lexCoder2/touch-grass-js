@@ -1,20 +1,24 @@
 #!/usr/bin/env node
 
-import meow from 'meow';
-import chalk from 'chalk';
-import { getArt } from '../src/art.js';
-import { getRandomMessage } from '../src/messages.js';
-import { incrementStreak, getStreakData, showStreakStats } from '../src/streak.js';
-import { showReturnTime, runCountdown, showTimerPrompt } from '../src/timer.js';
-import { openShareDialog } from '../src/share.js';
+import meow from "meow";
+import chalk from "chalk";
+import { getArt } from "../src/art.js";
+import { getRandomMessage } from "../src/messages.js";
+import {
+  incrementStreak,
+  getStreakData,
+  showStreakStats,
+} from "../src/streak.js";
+import { showReturnTime, runCountdown, showTimerPrompt } from "../src/timer.js";
+import { openShareDialog } from "../src/share.js";
 import {
   printHeader,
   printMessage,
   printStreakBadge,
   printSeparator,
   clearOnExit,
-} from '../src/ui.js';
-import { confirm, select } from '@inquirer/prompts';
+} from "../src/ui.js";
+import { confirm, select } from "@inquirer/prompts";
 
 const cli = meow(
   `
@@ -41,30 +45,30 @@ Examples
     importMeta: import.meta,
     flags: {
       streak: {
-        type: 'boolean',
-        shortFlag: 's',
+        type: "boolean",
+        shortFlag: "s",
         default: false,
       },
       share: {
-        type: 'boolean',
-        shortFlag: 'S',
+        type: "boolean",
+        shortFlag: "S",
         default: false,
       },
       noTimer: {
-        type: 'boolean',
+        type: "boolean",
         default: false,
       },
       noShare: {
-        type: 'boolean',
+        type: "boolean",
         default: false,
       },
       time: {
-        type: 'number',
-        shortFlag: 't',
+        type: "number",
+        shortFlag: "t",
         default: 10,
       },
     },
-  }
+  },
 );
 
 async function main() {
@@ -81,20 +85,20 @@ async function main() {
     const streakData = getStreakData();
     try {
       const platform = await select({
-        message: 'Which platform would you like to shame your followers on?',
+        message: "Which platform would you like to shame your followers on?",
         choices: [
-          { name: '🐦 Twitter/X', value: 'twitter' },
-          { name: '💼 LinkedIn', value: 'linkedin' },
-          { name: '📸 Instagram', value: 'instagram' },
-          { name: '🚫 Actually, nevermind', value: 'none' },
+          { name: "🐦 Twitter/X", value: "twitter" },
+          { name: "💼 LinkedIn", value: "linkedin" },
+          { name: "📸 Instagram", value: "instagram" },
+          { name: "🚫 Actually, nevermind", value: "none" },
         ],
       });
-      if (platform !== 'none') {
+      if (platform !== "none") {
         await openShareDialog(streakData, platform);
       }
     } catch {
       // Non-TTY, default to twitter
-      await openShareDialog(streakData, 'twitter');
+      await openShareDialog(streakData, "twitter");
     }
     process.exit(0);
   }
@@ -122,7 +126,9 @@ async function main() {
     const wantCountdown = await showTimerPrompt(cli.flags.time);
     if (wantCountdown) {
       await runCountdown(cli.flags.time);
-      console.log(chalk.bold.green('\n✓ Welcome back! Now go work on something.\n'));
+      console.log(
+        chalk.bold.green("\n✓ Welcome back! Now go work on something.\n"),
+      );
     }
   }
 
@@ -130,22 +136,22 @@ async function main() {
   if (!cli.flags.noShare) {
     try {
       const wantShare = await confirm({
-        message: 'Share your achievement on social media?',
+        message: "Share your achievement on social media?",
         default: false,
       });
 
       if (wantShare) {
         const platform = await select({
-          message: 'Which platform would you like to shame your followers on?',
+          message: "Which platform would you like to shame your followers on?",
           choices: [
-            { name: '🐦 Twitter/X', value: 'twitter' },
-            { name: '💼 LinkedIn', value: 'linkedin' },
-            { name: '📸 Instagram', value: 'instagram' },
-            { name: '🚫 Never mind', value: 'none' },
+            { name: "🐦 Twitter/X", value: "twitter" },
+            { name: "💼 LinkedIn", value: "linkedin" },
+            { name: "📸 Instagram", value: "instagram" },
+            { name: "🚫 Never mind", value: "none" },
           ],
         });
 
-        if (platform !== 'none') {
+        if (platform !== "none") {
           await openShareDialog(streakResult, platform);
         }
       }
@@ -154,7 +160,7 @@ async function main() {
     }
   }
 
-  console.log(chalk.dim('\nRespect. Now go touch that grass.\n'));
+  console.log(chalk.dim("\nRespect. Now go touch that grass.\n"));
   process.exit(0);
 }
 

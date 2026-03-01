@@ -1,6 +1,6 @@
-import * as vscode from 'vscode';
-import { ArtScene, ShareData, buildShareText, buildShareUrl } from './data';
-import { StreakResult } from './streak';
+import * as vscode from "vscode";
+import { ArtScene, ShareData, buildShareText, buildShareUrl } from "./data";
+import { StreakResult } from "./streak";
 
 let currentPanel: vscode.WebviewPanel | undefined;
 
@@ -9,27 +9,39 @@ export function openGrassPanelOrReveal(
   art: ArtScene,
   message: string,
   streakResult: StreakResult,
-  outdoorMinutes: number = 10
+  outdoorMinutes: number = 10,
 ): void {
   if (currentPanel) {
     currentPanel.reveal(vscode.ViewColumn.Beside);
-    currentPanel.webview.html = buildHtml(currentPanel.webview, art, message, streakResult, outdoorMinutes);
+    currentPanel.webview.html = buildHtml(
+      currentPanel.webview,
+      art,
+      message,
+      streakResult,
+      outdoorMinutes,
+    );
     return;
   }
 
   currentPanel = vscode.window.createWebviewPanel(
-    'touchGrass',
-    '🌿 Touch Grass',
+    "touchGrass",
+    "🌿 Touch Grass",
     { viewColumn: vscode.ViewColumn.Beside, preserveFocus: true },
-    { enableScripts: true, retainContextWhenHidden: true }
+    { enableScripts: true, retainContextWhenHidden: true },
   );
 
-  currentPanel.webview.html = buildHtml(currentPanel.webview, art, message, streakResult, outdoorMinutes);
+  currentPanel.webview.html = buildHtml(
+    currentPanel.webview,
+    art,
+    message,
+    streakResult,
+    outdoorMinutes,
+  );
 
   currentPanel.webview.onDidReceiveMessage(
     async (msg: { command: string; platform?: string; minutes?: number }) => {
-      if (msg.command === 'share') {
-        const platform = msg.platform as 'twitter' | 'linkedin' | 'instagram';
+      if (msg.command === "share") {
+        const platform = msg.platform as "twitter" | "linkedin" | "instagram";
         const shareData: ShareData = {
           count: streakResult.count,
           currentStreak: streakResult.currentStreak,
@@ -37,24 +49,28 @@ export function openGrassPanelOrReveal(
           lastVisit: streakResult.lastVisit,
         };
         const text = buildShareText(shareData);
-        if (platform === 'instagram') {
+        if (platform === "instagram") {
           await vscode.env.clipboard.writeText(text);
           vscode.window.showInformationMessage(
-            '📋 Copied to clipboard! Paste it into your Instagram caption.'
+            "📋 Copied to clipboard! Paste it into your Instagram caption.",
           );
           return;
         }
         const url = buildShareUrl(platform, text);
         await vscode.env.openExternal(vscode.Uri.parse(url));
       }
-      if (msg.command === 'setDuration' && msg.minutes && msg.minutes >= 1) {
+      if (msg.command === "setDuration" && msg.minutes && msg.minutes >= 1) {
         await vscode.workspace
-          .getConfiguration('touchGrass')
-          .update('outdoorMinutes', msg.minutes, vscode.ConfigurationTarget.Global);
+          .getConfiguration("touchGrass")
+          .update(
+            "outdoorMinutes",
+            msg.minutes,
+            vscode.ConfigurationTarget.Global,
+          );
       }
     },
     undefined,
-    context.subscriptions
+    context.subscriptions,
   );
 
   currentPanel.onDidDispose(() => {
@@ -64,23 +80,25 @@ export function openGrassPanelOrReveal(
 
 function escapeHtml(s: string): string {
   return s
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;');
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
 }
 
 /** Color the ASCII art the same way ui.js does — returns per-line HTML array */
 function colorArtLines(raw: string): string[] {
-  return raw.split('\n').map(line =>
-    escapeHtml(line)
-      .replace(/~/g,  '<span class="grass">~</span>')
-      .replace(/\*/g, '<span class="sun">*</span>')
-      .replace(/\^/g, '<span class="grass">^</span>')
-      .replace(/,/g,  '<span class="grass">,</span>')
-      .replace(/v/g,  '<span class="grass">v</span>')
-      .replace(/\|/g, '<span class="grass">|</span>')
-  );
+  return raw
+    .split("\n")
+    .map((line) =>
+      escapeHtml(line)
+        .replace(/~/g, '<span class="grass">~</span>')
+        .replace(/\*/g, '<span class="sun">*</span>')
+        .replace(/\^/g, '<span class="grass">^</span>')
+        .replace(/,/g, '<span class="grass">,</span>')
+        .replace(/v/g, '<span class="grass">v</span>')
+        .replace(/\|/g, '<span class="grass">|</span>'),
+    );
 }
 
 function buildHtml(
@@ -88,14 +106,14 @@ function buildHtml(
   art: ArtScene,
   message: string,
   streak: StreakResult,
-  outdoorMinutes: number = 10
+  outdoorMinutes: number = 10,
 ): string {
   const milestoneHtml = streak.milestone
     ? `<div class="milestone">✨ ${escapeHtml(streak.milestone)}</div>`
-    : '';
+    : "";
 
-  const artHtml = colorArtLines(art.scene).join('\n');
-  const pad = (n: number) => String(Math.floor(n)).padStart(2, '0');
+  const artHtml = colorArtLines(art.scene).join("\n");
+  const pad = (n: number) => String(Math.floor(n)).padStart(2, "0");
   const initDisplay = `${pad(outdoorMinutes)}:00`;
 
   return /* html */ `<!DOCTYPE html>
@@ -323,11 +341,11 @@ function buildHtml(
   <div class="timer-area">
     <div class="dur-label">outdoor time</div>
     <div class="dur-pills" id="pills">
-      <button class="pill${outdoorMinutes === 5  ? ' active' : ''}" onclick="pickDur(5)">5m</button>
-      <button class="pill${outdoorMinutes === 10 ? ' active' : ''}" onclick="pickDur(10)">10m</button>
-      <button class="pill${outdoorMinutes === 15 ? ' active' : ''}" onclick="pickDur(15)">15m</button>
-      <button class="pill${outdoorMinutes === 20 ? ' active' : ''}" onclick="pickDur(20)">20m</button>
-      <button class="pill${outdoorMinutes === 30 ? ' active' : ''}" onclick="pickDur(30)">30m</button>
+      <button class="pill${outdoorMinutes === 5 ? " active" : ""}" onclick="pickDur(5)">5m</button>
+      <button class="pill${outdoorMinutes === 10 ? " active" : ""}" onclick="pickDur(10)">10m</button>
+      <button class="pill${outdoorMinutes === 15 ? " active" : ""}" onclick="pickDur(15)">15m</button>
+      <button class="pill${outdoorMinutes === 20 ? " active" : ""}" onclick="pickDur(20)">20m</button>
+      <button class="pill${outdoorMinutes === 30 ? " active" : ""}" onclick="pickDur(30)">30m</button>
       <span class="pill pill-custom">
         <input id="customMin" type="number" min="1" max="120"
           placeholder="?" title="Custom minutes"

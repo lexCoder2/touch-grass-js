@@ -1,6 +1,6 @@
 const scenes = [
   {
-    title: '~ The Meadow ~',
+    title: "~ The Meadow ~",
     scene: `      \\  |  /    .  *   .    *
        \\ | /  *           *  .   *
    _____\\|/_____
@@ -15,7 +15,7 @@ const scenes = [
   | | | | | | | | | | | | | | | | | | | | | | |`,
   },
   {
-    title: '~ The Park ~',
+    title: "~ The Park ~",
     scene: `  v        v           v        .  *
    .   *       .    *      .     .
         \\   .   /      *
@@ -30,7 +30,7 @@ const scenes = [
   | | | | | | | | | | | | | | | | | | | | | | |`,
   },
   {
-    title: '~ The Mountain ~',
+    title: "~ The Mountain ~",
     scene: `      .    *       .    *    .  *
           /\\
          /  \\      .    *
@@ -47,7 +47,8 @@ const scenes = [
 ];
 
 export function getArt(variant = null) {
-  const index = variant !== null ? variant : Math.floor(Math.random() * scenes.length);
+  const index =
+    variant !== null ? variant : Math.floor(Math.random() * scenes.length);
   return scenes[index];
 }
 

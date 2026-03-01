@@ -1,67 +1,161 @@
-# Go Touch Grass — VS Code / Cursor Extension
-
 <p align="center">
-  <img src="touch_grass_logo.png" alt="Go Touch Grass" width="160" />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="touch_grass_logo_dark.png">
+    <source media="(prefers-color-scheme: light)" srcset="touch_grass_logo.png">
+    <img src="touch_grass_logo.png" alt="Go Touch Grass" width="128" />
+  </picture>
 </p>
 
-> The `go-touch-grass` CLI, now living rent-free inside your editor.
+<h1 align="center">Go Touch Grass</h1>
 
-## Features
+<p align="center">
+  <strong>Your editor knows you haven't moved in 3 hours. So do we.</strong>
+</p>
 
-| Feature | Description |
-|---|---|
-| **Status bar streak** | Persistent streak counter lives in the right side of the status bar (`🌿 3 day streak`). Click it to open the panel. |
-| **Grass panel** | A full terminal-themed webview with a random ASCII art scene, a sarcastic wellness message, and your streak data. |
-| **10-min outdoor timer** | In-panel countdown with a progress bar — runs entirely in the webview, no terminal needed. |
-| **Social sharing** | Share to Twitter/X, LinkedIn directly, or copy text for Instagram — straight from the panel or via command. |
-| **Periodic reminders** | A notification pops up every N minutes (configurable) with a random message and a one-click "Touch Grass Now" button. |
+<p align="center">
+  <a href="https://github.com/lexCoder2/touch-grass-js"><img alt="GitHub" src="https://img.shields.io/badge/github-touch--grass--js-3fb950?logo=github&style=flat-square"></a>
+  <a href="https://www.npmjs.com/package/go-touch-grass"><img alt="npm" src="https://img.shields.io/npm/v/go-touch-grass?color=3fb950&style=flat-square&logo=npm"></a>
+  <img alt="VS Code" src="https://img.shields.io/badge/VS%20Code-%5E1.85-79c0ff?style=flat-square&logo=visualstudiocode">
+  <img alt="License" src="https://img.shields.io/badge/license-MIT-d29922?style=flat-square">
+</p>
 
-## Commands
+---
 
-All commands are available via the Command Palette (`Ctrl+Shift+P` / `Cmd+Shift+P`):
+> A sarcastic, streak-tracking, ASCII-art-powered reminder to step away from your screen and go touch some actual grass.
+> Born as a CLI — [`npx go-touch-grass`](https://www.npmjs.com/package/go-touch-grass) — now living rent-free inside VS Code and Cursor.
 
-| Command | Description |
-|---|---|
-| `Touch Grass: Go Outside Now` | Opens the grass panel and increments your streak |
-| `Touch Grass: Show Streak Stats` | Quick-pick notification with your stats |
-| `Touch Grass: Share Achievement` | Opens platform picker → launches share URL |
-| `Touch Grass: Reset Streak` | Full streak reset (confirms before wiping) |
+---
 
-## Settings
+## ✨ What it does
+
+<table>
+<tr>
+<td width="48">🌿</td>
+<td><strong>Status bar streak counter</strong><br>
+<code>start to touch 🌿</code> → <code>🌿 1 day streak</code> → <code>🌿 7 day streak</code>.<br>
+Hover for a tooltip with your full stats and quick-action links. Click to open the panel.</td>
+</tr>
+<tr>
+<td>🖼️</td>
+<td><strong>Compact side panel</strong><br>
+Opens beside your code without stealing focus. Shows a random ASCII art scene (meadow, park, or mountain), a sarcastic developer wellness message, and your streak data — all instantly, no slow reveals.</td>
+</tr>
+<tr>
+<td>⏱️</td>
+<td><strong>Configurable outdoor timer</strong><br>
+Pick your duration right in the panel: <code>5m · 10m · 15m · 20m · 30m</code> or any custom value. The selection is saved globally so it sticks across sessions.</td>
+</tr>
+<tr>
+<td>🔔</td>
+<td><strong>Periodic reminders</strong><br>
+A notification appears every N minutes (default 60, configurable) with a random message and a one-click <em>"Touch Grass Now"</em> button.</td>
+</tr>
+<tr>
+<td>📊</td>
+<td><strong>Persistent streak tracking</strong><br>
+Daily streak · longest streak ever · total touches · last date. Stored in VS Code global state — survives restarts, syncs with Settings Sync.</td>
+</tr>
+<tr>
+<td>📢</td>
+<td><strong>Social sharing</strong><br>
+Share to <strong>Twitter / X</strong> or <strong>LinkedIn</strong> in one click. Instagram copies the caption to your clipboard. 14 unique post templates that use your real streak numbers.</td>
+</tr>
+</table>
+
+---
+
+## 🚀 Commands
+
+Open the Command Palette (`Ctrl+Shift+P` / `Cmd+Shift+P`) and type **Touch Grass**:
+
+| Command                          | What it does                                             |
+| -------------------------------- | -------------------------------------------------------- |
+| `Touch Grass: Go Outside Now`    | Opens the panel, increments your streak                  |
+| `Touch Grass: Show Streak Stats` | Shows a stats notification with panel / share shortcuts  |
+| `Touch Grass: Share Achievement` | Platform picker → opens share URL or copies to clipboard |
+| `Touch Grass: Reset Streak`      | Wipes streak data (requires confirmation)                |
+
+---
+
+## ⚙️ Settings
+
+| Setting                              | Default | Description                                |
+| ------------------------------------ | ------- | ------------------------------------------ |
+| `touchGrass.enableReminders`         | `true`  | Toggle periodic reminders on / off         |
+| `touchGrass.reminderIntervalMinutes` | `60`    | Minutes between reminders (min 5)          |
+| `touchGrass.outdoorMinutes`          | `10`    | Default outdoor timer duration (1–120 min) |
 
 ```jsonc
+// .vscode/settings.json
 {
-  // Enable periodic in-editor reminders
   "touchGrass.enableReminders": true,
-
-  // How often to show reminders (minutes, minimum 5)
-  "touchGrass.reminderIntervalMinutes": 60
+  "touchGrass.reminderIntervalMinutes": 45,
+  "touchGrass.outdoorMinutes": 10,
 }
 ```
 
-## Development
+Duration can also be changed live from the panel — no settings file needed.
 
-```bash
-cd vscode-extension
-npm install
-npm run compile      # one-time build
-npm run watch        # watch mode during development
+---
+
+## 🌿 ASCII art scenes
+
+```
+  v        v           v        .  *       .    *       .    *    .  *
+                                        /\
+        \   .   /      *               /  \      .    *
+     *   \ _ /     *                  / go \  .          *
+         /| |\           .           /      \       .      *
+        / | | \    *                /outside!\          .    *
+      /   | |   \      .    *      /___________\   .    *
+    /_____|_|_____\       .   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+ |||||||||||||||||||||||||||||||||||||||||||||||||
 ```
 
-To test locally, open the `vscode-extension` folder in VS Code and press **F5** to launch the Extension Development Host.
+31 sarcastic messages. 3 scenes. Zero mercy.
 
-## Packaging
+---
 
-```bash
-npx @vscode/vsce package
+## 📦 Install
+
+**From the VS Code Marketplace:**
+Search `Go Touch Grass` in the Extensions view or run:
+
+```
+ext install lexCoder2.go-touch-grass
 ```
 
-This generates a `.vsix` file you can install with:
+**From a `.vsix` file:**
 
 ```bash
-code --install-extension go-touch-grass-1.0.0.vsix
+code --install-extension go-touch-grass-*.vsix
 ```
 
 ---
 
-Part of [go-touch-grass](https://github.com/lexCoder2/touch-grass-js) — also available as `npx go-touch-grass`.
+## 🌱 Also available as a CLI
+
+[![npm](https://img.shields.io/npm/v/go-touch-grass?color=3fb950&style=flat-square&logo=npm)](https://www.npmjs.com/package/go-touch-grass)
+[![npm downloads](https://img.shields.io/npm/dm/go-touch-grass?style=flat-square&color=3fb950)](https://www.npmjs.com/package/go-touch-grass)
+
+Prefer the terminal? The same art, messages, and streak tracking are available as a zero-install CLI:
+
+```bash
+npx go-touch-grass
+```
+
+Supports `--streak`, `--share`, `--noTimer`, `--noShare`, and `--time <minutes>` flags. See the [CLI README](https://github.com/lexCoder2/touch-grass-js#readme) for full details.
+
+---
+
+## 🤝 Contributing
+
+Issues and PRs welcome at [github.com/lexCoder2/touch-grass-js](https://github.com/lexCoder2/touch-grass-js).
+
+---
+
+<p align="center">
+  <sub>MIT License · Made with too much screen time and not enough grass</sub>
+</p>
