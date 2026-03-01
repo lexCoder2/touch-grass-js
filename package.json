@@ -1,0 +1,67 @@
+{
+  "name": "go-touch-grass",
+  "version": "1.0.0",
+  "description": "A Fun CLI reminder for developers to go outside and touch grass. Persistent streak tracking, ASCII art scenes, emoji-packed social sharing, and optional countdown timer.",
+  "homepage": "https://github.com/lexCoder2/touch-grass-js#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lexCoder2/touch-grass-js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/lexCoder2/touch-grass-js/issues"
+  },
+  "author": "Alex Rodriguez <hi@iarodriguez.com>",
+  "type": "module",
+  "bin": {
+    "touch-grass": "./bin/touch-grass.js"
+  },
+  "files": [
+    "bin/",
+    "src/",
+    "LICENSE",
+    "README.md",
+    "logo.svg"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node bin/touch-grass.js",
+    "lint": "node --check src/*.js bin/*.js"
+  },
+  "keywords": [
+    "cli",
+    "fun",
+    "grass",
+    "developer-health",
+    "humor",
+    "productivity",
+    "outdoors",
+    "streak",
+    "sarcasm",
+    "terminal",
+    "wellness",
+    "break-reminder",
+    "burnout-prevention",
+    "mental-health",
+    "work-life-balance",
+    "social-sharing",
+    "twitter",
+    "linkedin",
+    "instagram",
+    "nodejs",
+    "npm",
+    "npx",
+    "developers"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^5.4.1",
+    "conf": "^15.1.0",
+    "meow": "^14.0.0",
+    "open": "^11.0.0",
+    "@inquirer/prompts": "^8.3.0",
+    "boxen": "^8.0.1",
+    "log-update": "^7.2.0"
+  }
+}
