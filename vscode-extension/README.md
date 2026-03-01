@@ -124,7 +124,7 @@ Duration can also be changed live from the panel — no settings file needed.
 Search `Go Touch Grass` in the Extensions view or run:
 
 ```
-ext install lexCoder2.go-touch-grass
+ext install lexCoder.gotouchgrass
 ```
 
 **From a `.vsix` file:**

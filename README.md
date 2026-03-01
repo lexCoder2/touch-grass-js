@@ -14,7 +14,7 @@ Track your outdoor streak, earn milestones, and share your grass-touching stats 
 
 [![npm version](https://img.shields.io/npm/v/go-touch-grass.svg?style=flat-square)](https://www.npmjs.com/package/go-touch-grass)
 [![npm downloads](https://img.shields.io/npm/dm/go-touch-grass.svg?style=flat-square)](https://www.npmjs.com/package/go-touch-grass)
-[![VS Code Marketplace](https://img.shields.io/visual-studio-marketplace/v/lexCoder2.go-touch-grass?label=VS%20Code%20Marketplace&style=flat-square&logo=visualstudiocode&color=79c0ff)](https://marketplace.visualstudio.com/items?itemName=lexCoder2.go-touch-grass)
+[![VS Code Marketplace](https://img.shields.io/visual-studio-marketplace/v/lexCoder.gotouchgrass?label=VS%20Code%20Marketplace&style=flat-square&logo=visualstudiocode&color=79c0ff)](https://marketplace.visualstudio.com/items?itemName=lexCoder.gotouchgrass)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](./LICENSE)
 [![Node.js Version](https://img.shields.io/badge/node-%3E%3D20-brightgreen.svg?style=flat-square)](https://nodejs.org/)
 
@@ -60,12 +60,12 @@ npx go-touch-grass
 
 ### VS Code / Cursor Extension
 
-[![Install on VS Code](https://img.shields.io/badge/Install%20on-VS%20Code%20Marketplace-79c0ff?style=for-the-badge&logo=visualstudiocode)](https://marketplace.visualstudio.com/items?itemName=lexCoder2.go-touch-grass)
+[![Install on VS Code](https://img.shields.io/badge/Install%20on-VS%20Code%20Marketplace-79c0ff?style=for-the-badge&logo=visualstudiocode)](https://marketplace.visualstudio.com/items?itemName=lexCoder.gotouchgrass)
 
 Search **Go Touch Grass** in the Extensions view, or run:
 
 ```bash
-code --install-extension lexCoder2.go-touch-grass
+code --install-extension lexCoder.gotouchgrass
 ```
 
 Includes a status bar streak counter, compact side panel with timer, periodic reminders, and social sharing — all without leaving your editor. See the [extension README](./vscode-extension/README.md) for full details.
@@ -84,7 +84,7 @@ Includes a status bar streak counter, compact side panel with timer, periodic re
 | **Social Media Sharing**       | Post your streak to **Twitter/X**, **LinkedIn**, or **Instagram**                                                                                                                                                         |
 | **8.5 kB Package Size**        | Tiny footprint — optimized for `npx` cold starts                                                                                                                                                                          |
 | **ESM-Native**                 | Pure ES modules, no CommonJS                                                                                                                                                                                              |
-| **VS Code / Cursor Extension** | Status bar streak counter, compact side panel with configurable timer, periodic reminders, and social sharing. [Install from Marketplace →](https://marketplace.visualstudio.com/items?itemName=lexCoder2.go-touch-grass) |
+| **VS Code / Cursor Extension** | Status bar streak counter, compact side panel with configurable timer, periodic reminders, and social sharing. [Install from Marketplace →](https://marketplace.visualstudio.com/items?itemName=lexCoder.gotouchgrass) |
 
 ---
 
