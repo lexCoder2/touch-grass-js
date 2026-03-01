@@ -74,16 +74,16 @@ Includes a status bar streak counter, compact side panel with timer, periodic re
 
 ## 🎯 Features
 
-| Feature                        | Description                                                                                              |
-| ------------------------------ | -------------------------------------------------------------------------------------------------------- |
-| **31 Sarcastic Messages**      | A different quip every time — all about your screen-addicted life choices                                |
-| **3 ASCII Art Scenes**         | Meadow, park, and mountain environments rendered in your terminal                                        |
-| **Persistent Streak Tracking** | Your history lives in `~/.config/go-touch-grass/` (Linux/Mac) or `%APPDATA%\\go-touch-grass\\` (Windows) |
-| **Milestone Achievements**     | Unlock special messages at 1, 5, 10, 25, 50, and 100 touches                                             |
-| **10-Minute Countdown Timer**  | Optional animated progress bar for your outdoor assignment                                               |
-| **Social Media Sharing**       | Post your streak to **Twitter/X**, **LinkedIn**, or **Instagram**                                        |
-| **8.5 kB Package Size**        | Tiny footprint — optimized for `npx` cold starts                                                         |
-| **ESM-Native**                 | Pure ES modules, no CommonJS                                                                             |
+| Feature                        | Description                                                                                                                                                                                                               |
+| ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **31 Sarcastic Messages**      | A different quip every time — all about your screen-addicted life choices                                                                                                                                                 |
+| **3 ASCII Art Scenes**         | Meadow, park, and mountain environments rendered in your terminal                                                                                                                                                         |
+| **Persistent Streak Tracking** | Your history lives in `~/.config/go-touch-grass/` (Linux/Mac) or `%APPDATA%\\go-touch-grass\\` (Windows)                                                                                                                  |
+| **Milestone Achievements**     | Unlock special messages at 1, 5, 10, 25, 50, and 100 touches                                                                                                                                                              |
+| **10-Minute Countdown Timer**  | Optional animated progress bar for your outdoor assignment                                                                                                                                                                |
+| **Social Media Sharing**       | Post your streak to **Twitter/X**, **LinkedIn**, or **Instagram**                                                                                                                                                         |
+| **8.5 kB Package Size**        | Tiny footprint — optimized for `npx` cold starts                                                                                                                                                                          |
+| **ESM-Native**                 | Pure ES modules, no CommonJS                                                                                                                                                                                              |
 | **VS Code / Cursor Extension** | Status bar streak counter, compact side panel with configurable timer, periodic reminders, and social sharing. [Install from Marketplace →](https://marketplace.visualstudio.com/items?itemName=lexCoder2.go-touch-grass) |
 
 ---

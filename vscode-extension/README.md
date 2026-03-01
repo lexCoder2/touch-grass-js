@@ -1,8 +1,8 @@
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="touch_grass_logo_dark.png">
-    <source media="(prefers-color-scheme: light)" srcset="touch_grass_logo.png">
-    <img src="touch_grass_logo.png" alt="Go Touch Grass" width="128" />
+    <source media="(prefers-color-scheme: dark)" srcset="touch_logo_dark.png">
+    <source media="(prefers-color-scheme: light)" srcset="touch_logo.png">
+    <img src="touch_logo.png" alt="Go Touch Grass" width="128" />
   </picture>
 </p>
 
