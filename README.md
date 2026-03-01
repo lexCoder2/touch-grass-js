@@ -1,9 +1,9 @@
 <div align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./touch_grass_logo_dark.png" />
-  <source media="(prefers-color-scheme: light)" srcset="./toucn_grass_logo.png" />
-  <img src="./touch_grass_logo.png" alt="go-touch-grass CLI logo — a mouse cursor touching grass blades, representing developer break reminders" width="280" />
+  <source media="(prefers-color-scheme: dark)" srcset="./touch_logo_dark.png" />
+  <source media="(prefers-color-scheme: light)" srcset="./toucn_logo.png" />
+  <img src="./touch_logo.png" alt="go-touch-grass CLI logo — a mouse cursor touching grass blades, representing developer break reminders" width="280" />
 </picture>
 
 # go-touch-grass
@@ -74,16 +74,16 @@ Includes a status bar streak counter, compact side panel with timer, periodic re
 
 ## 🎯 Features
 
-| Feature                        | Description                                                                                                                                                                                                               |
-| ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **31 Sarcastic Messages**      | A different quip every time — all about your screen-addicted life choices                                                                                                                                                 |
-| **3 ASCII Art Scenes**         | Meadow, park, and mountain environments rendered in your terminal                                                                                                                                                         |
-| **Persistent Streak Tracking** | Your history lives in `~/.config/go-touch-grass/` (Linux/Mac) or `%APPDATA%\\go-touch-grass\\` (Windows)                                                                                                                  |
-| **Milestone Achievements**     | Unlock special messages at 1, 5, 10, 25, 50, and 100 touches                                                                                                                                                              |
-| **10-Minute Countdown Timer**  | Optional animated progress bar for your outdoor assignment                                                                                                                                                                |
-| **Social Media Sharing**       | Post your streak to **Twitter/X**, **LinkedIn**, or **Instagram**                                                                                                                                                         |
-| **8.5 kB Package Size**        | Tiny footprint — optimized for `npx` cold starts                                                                                                                                                                          |
-| **ESM-Native**                 | Pure ES modules, no CommonJS                                                                                                                                                                                              |
+| Feature                        | Description                                                                                                                                                                                                            |
+| ------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **31 Sarcastic Messages**      | A different quip every time — all about your screen-addicted life choices                                                                                                                                              |
+| **3 ASCII Art Scenes**         | Meadow, park, and mountain environments rendered in your terminal                                                                                                                                                      |
+| **Persistent Streak Tracking** | Your history lives in `~/.config/go-touch-grass/` (Linux/Mac) or `%APPDATA%\\go-touch-grass\\` (Windows)                                                                                                               |
+| **Milestone Achievements**     | Unlock special messages at 1, 5, 10, 25, 50, and 100 touches                                                                                                                                                           |
+| **10-Minute Countdown Timer**  | Optional animated progress bar for your outdoor assignment                                                                                                                                                             |
+| **Social Media Sharing**       | Post your streak to **Twitter/X**, **LinkedIn**, or **Instagram**                                                                                                                                                      |
+| **8.5 kB Package Size**        | Tiny footprint — optimized for `npx` cold starts                                                                                                                                                                       |
+| **ESM-Native**                 | Pure ES modules, no CommonJS                                                                                                                                                                                           |
 | **VS Code / Cursor Extension** | Status bar streak counter, compact side panel with configurable timer, periodic reminders, and social sharing. [Install from Marketplace →](https://marketplace.visualstudio.com/items?itemName=lexCoder.gotouchgrass) |
 
 ---
@@ -277,6 +277,22 @@ Contributions are welcome from developers who go outside sometimes.
 - **Bug reports:** [Open an issue](https://github.com/lexCoder2/touch-grass-js/issues)
 - **Feature requests:** [Start a discussion](https://github.com/lexCoder2/touch-grass-js/discussions)
 - **Pull requests:** Reviewed between outdoor breaks
+
+### 🎨 We especially want your ASCII art
+
+Got a terminal scene that belongs in here? **Add it to [`src/art.js`](./src/art.js).**
+
+Each scene is just an array of strings — one per line. Match the indentation style of the existing scenes (Meadow, Park, Mountain) and open a PR. Bonus points for:
+
+- Trees, beaches, rooftops, fields, forests, rainy windows
+- Scenes that look recognizable at 80 columns
+- No dependencies — plain strings only
+
+### 💬 We especially want your sarcastic phrases
+
+Do you have a cutting observation about developer screen addiction? **Add it to [`src/messages.js`](./src/messages.js).**
+
+The bar is: would a sleep-deprived engineer laugh or wince at this while staring at a bug at 2am? If yes, open a PR. Keep it under ~100 characters so it fits the box neatly.
 
 ---
 

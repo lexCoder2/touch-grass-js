@@ -154,6 +154,13 @@ Supports `--streak`, `--share`, `--noTimer`, `--noShare`, and `--time <minutes>`
 
 Issues and PRs welcome at [github.com/lexCoder2/touch-grass-js](https://github.com/lexCoder2/touch-grass-js).
 
+**Got a terminal ASCII art scene or a sarcastic developer phrase?** We want it.
+
+- 🎨 **New scenes** → [`src/art.js`](https://github.com/lexCoder2/touch-grass-js/blob/main/src/art.js) — plain string arrays, one per line, ~80 cols wide
+- 💬 **New messages** → [`src/messages.js`](https://github.com/lexCoder2/touch-grass-js/blob/main/src/messages.js) — keep it under ~100 chars, keep it sarcastic
+
+Open a PR on GitHub — no setup required beyond `node >= 20`.
+
 ---
 
 <p align="center">
