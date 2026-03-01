@@ -33,7 +33,17 @@
     "humor",
     "burnout",
     "mental-health",
-    "work-life-balance"
+    "work-life-balance",
+    "streak",
+    "ascii-art",
+    "timer",
+    "pomodoro",
+    "fun",
+    "cursor",
+    "developer-tools",
+    "outside",
+    "notification",
+    "self-care"
   ],
   "activationEvents": [
     "onStartupFinished"
