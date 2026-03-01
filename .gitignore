@@ -35,3 +35,7 @@ vscode-extension/node_modules/
 
 # Coverage
 coverage/
+
+# Demo recordings (generated — commit demo.gif only when ready)
+demo.cast
+*.cast
