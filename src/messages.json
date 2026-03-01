@@ -59,5 +59,15 @@
   "Touch grass. Your future self will leave a glowing review.",
   "`undefined is not grass`. Go find some.",
   "Your README says you are passionate. Prove it by being alive.",
-  "Production is fine. You are not. Prioritize accordingly."
+  "Production is fine. You are not. Prioritize accordingly.",
+  "Your CI/CD pipeline is green. Your complexion is not.",
+  "The last time you saw the sun, it was a different operating system.",
+  "git checkout main && git checkout outside && touch grass",
+  "You optimized for performance. The universe optimized for photosynthesis. Go see it.",
+  "Your screen time report just filed a formal complaint.",
+  "Memory leak detected: your life is draining into your terminal.",
+  "You've pair programmed with the same person for 6 hours. Try solo grass-touching.",
+  "Async/await: you've been awaiting sunlight since Monday.",
+  "Your Docker container is healthier than you are. Fix that.",
+  "The trees outside have better uptime than your deployment. Learn from them."
 ]

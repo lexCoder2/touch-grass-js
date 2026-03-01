@@ -35,13 +35,13 @@ Somewhere between your 47th open tab and your third energy drink, you forgot tha
 
 **go-touch-grass** is an intervention disguised as a CLI tool:
 
-- **Roasts you** with one of 31+ messages about your screen-addicted life choices
+- **Roasts you** with one of 67+ (yes, I did it) messages about your screen-addicted life choices
 - **Shows you what outside looks like** via ASCII art (because you've forgotten)
 - **Tracks your outdoor streak** — same dopamine as a GitHub graph, but good for you
 - **Assigns a 10-minute break** with a countdown timer, because apparently adults need to be told when to go outside
 - **Lets you share on social media** — if you touched grass and didn't tweet about it, did it even happen?
 
-We built this because we *are* the target audience. We are the 2am debug session. We are the "I'll go outside after this PR." We are the reason this tool exists.
+We built this because we _are_ the target audience. We are the 2am debug session. We are the "I'll go outside after this PR." We are the reason this tool exists.
 
 ---
 
@@ -121,7 +121,7 @@ Honestly? We'll take anything. This is a CLI that tells people to go outside —
 - **Wild ideas** — Python port? Homebrew formula? A cron job that runs it during your CI pipeline? A build that runs on your fridge? Yes. All of it. [Open an issue](https://github.com/lexCoder2/touch-grass-js/issues) and let's talk.
 - **Bug fixes** — if you found a bug in a tool that tells you to go outside, that's honestly impressive. Fix it and we'll merge it between outdoor breaks.
 - **New platforms** — Android widget, Slack bot, Raycast extension, a version that works on your smart toaster — if it has a screen, it should be telling someone to touch grass.
-- **Improvements** — better streaks, new milestones, sound effects, whatever. If it makes the experience more fun without making it *serious*, we're in.
+- **Improvements** — better streaks, new milestones, sound effects, whatever. If it makes the experience more fun without making it _serious_, we're in.
 
 The only rule: keep it fun. This is a joke that accidentally became wellness software. Let's keep it that way.
 
