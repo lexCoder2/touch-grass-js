@@ -10,6 +10,7 @@ import { incrementStreak, getStreakData, resetStreak } from "./streak";
 import { openGrassPanelOrReveal } from "./panel";
 
 let reminderTimer: ReturnType<typeof setInterval> | undefined;
+let reminderActive = false;
 let statusBarItem: vscode.StatusBarItem;
 
 // Last-used art + message kept for the tooltip
@@ -179,14 +180,20 @@ function clearReminderTimer(): void {
 }
 
 async function showReminder(context: vscode.ExtensionContext): Promise<void> {
-  const message = getRandomMessage();
-  const action = await vscode.window.showInformationMessage(
-    `🌿 ${message}`,
-    "Touch Grass Now",
-    "Skip",
-  );
-  if (action === "Touch Grass Now") {
-    void vscode.commands.executeCommand("touchGrass.go");
+  if (reminderActive) return;
+  reminderActive = true;
+  try {
+    const message = getRandomMessage();
+    const action = await vscode.window.showInformationMessage(
+      `🌿 ${message}`,
+      "Touch Grass Now",
+      "Skip",
+    );
+    if (action === "Touch Grass Now") {
+      void vscode.commands.executeCommand("touchGrass.go");
+    }
+  } finally {
+    reminderActive = false;
   }
 }
 
